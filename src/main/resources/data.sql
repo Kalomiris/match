@@ -29,7 +29,7 @@ VALUES
     (3, 'Win Player Y', 2.4),
     (3, 'Over 3 sets', 2.0),
     (3, 'Under 3 sets', 1.7),
-    (3, 'X', 3.0);  -- Adding the 'X' specifier for all odds
+    (3, 'X', 3.0);
 
 INSERT INTO match_odd (match_id, specifier, odd)
 VALUES
@@ -37,4 +37,4 @@ VALUES
     (4, 'Win Team F', 2.3),
     (4, 'Over 300 runs', 2.1),
     (4, 'Under 300 runs', 1.8),
-    (4, 'X', 3.4);  -- Adding the 'X' specifier for all odds
+    (4, 'X', 3.4);

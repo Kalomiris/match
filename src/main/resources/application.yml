@@ -1,15 +1,9 @@
 spring:
-  h2:
-    console.enabled: true
   datasource:
-#    url: jdbc:postgresql://127.0.0.1:5432/matchdb
-#    username: pass
-#    password: pass
-#    driver-class-name: org.postgresql.Driver
-    url: jdbc:h2:mem:matchdb
+    url: jdbc:postgresql://db:5432/matchdb
     username: pass
     password: pass
-    driver-class-name: org.h2.Driver
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: create-drop
@@ -17,8 +11,12 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
     defer-datasource-initialization: true
-    database-platform: org.hibernate.dialect.H2Dialect
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:/data.sql
 
 server:
   port: 8080

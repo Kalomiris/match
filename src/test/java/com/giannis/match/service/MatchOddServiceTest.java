@@ -22,9 +22,6 @@ public class MatchOddServiceTest {
     @Mock
     private MatchOddsRepository matchOddsRepository;
 
-    @Mock
-    private MatchService matchService;
-
     @InjectMocks
     private MatchOddService matchOddService;
 

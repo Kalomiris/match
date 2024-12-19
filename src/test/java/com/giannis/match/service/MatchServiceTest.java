@@ -45,7 +45,7 @@ public class MatchServiceTest {
         matchOdd.setSpecifier("Home Win");
         matchOdd.setOdd(2.5);
         matchOdd.setMatch(match);
-        match.setMatchOdds(Collections.singletonList(matchOdd)); // Add the odd to the match's odds list
+        match.setMatchOdds(Collections.singletonList(matchOdd));
     }
 
     @Test
@@ -58,7 +58,7 @@ public class MatchServiceTest {
         assertEquals(1L, savedMatch.getId());
         assertEquals("Football Match", savedMatch.getDescription());
         assertNotNull(savedMatch.getMatchOdds());
-        assertEquals(1, savedMatch.getMatchOdds().size()); // Ensure the odds are associated correctly
+        assertEquals(1, savedMatch.getMatchOdds().size());
         verify(matchRepository, times(1)).save(match);
     }
 
@@ -72,7 +72,7 @@ public class MatchServiceTest {
         assertEquals(1L, foundMatch.getId());
         assertEquals("Football Match", foundMatch.getDescription());
         assertNotNull(foundMatch.getMatchOdds());
-        assertEquals(1, foundMatch.getMatchOdds().size()); // Verify that match odds are present
+        assertEquals(1, foundMatch.getMatchOdds().size());
         verify(matchRepository, times(1)).findById(1L);
     }
 
@@ -120,7 +120,7 @@ public class MatchServiceTest {
         assertEquals(1, result.size());
         assertEquals("Football Match", result.get(0).getDescription());
         assertNotNull(result.get(0).getMatchOdds());
-        assertEquals(1, result.get(0).getMatchOdds().size()); // Verify odds associated with match
+        assertEquals(1, result.get(0).getMatchOdds().size());
         verify(matchRepository, times(1)).findAll();
     }
 }
